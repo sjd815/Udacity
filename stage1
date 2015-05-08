@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+	<meta charset="UTF-8">
+    <title>Stephen's Notes: Stage 1</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+<body>
+  <h1>STEPHEN'S COURSE NOTES</h1>
+  <div class="TOC">
+    <h1>Table of Contents</h1>
+      <ol>
+        <li class="TOClessons"><a href="#lesson1">Lesson 1: The Basics of the Web and HTML</a>
+          <ul class="TOCul">
+            <li class="TOClist"><a href="#lesson1.1">World Wide Web</a></li>
+            <li class="TOClist"><a href="#lesson1.2">HTML</a></li>
+            <li class="TOClist"><a href="#lesson1.3">Tags and Elements</a></li>
+            <li class="TOClist"><a href="#lesson1.4">Whitespace</a></li>
+            <li class="TOClist"><a href="#lesson1.5">Inline vs. Block Elements</a></li>
+          </ul>
+        </li>
+        <li class="TOClessons"><a href="#lesson2">Lesson 2: Creating a Structured Document with HTML</a>
+          <ul class="TOCul">
+            <li class="TOClist"><a href="#lesson2.1">Exploring the Web</a></li>
+            <li class="TOClist"><a href="#lesson2.2">Browser Development Tools</a></li>
+            <li class="TOClist"><a href="#lesson2.3">Tree-Like Structure</a></li>
+            <li class="TOClist"><a href="#lesson2.4">How it Works Together</a></li>
+            <li class="TOClist"><a href="#lesson2.5">Boxes Everywhere</a></li>
+            <li class="TOClist"><a href="#lesson2.6">Text Editors</a></li>
+          </ul>
+        </li>
+        <li class="TOClessons"><a href="#lesson3">Lesson 3: Adding CSS Style to HTML Structure</a>
+          <ul class="TOCul">
+            <li class="TOClist"><a href="#lesson3.1">Avoiding Repetition</a></li>
+            <li class="TOClist"><a href="#lesson3.2">Understanding CSS</a></li>
+            <li class="TOClist"><a href="#lesson3.3">The Box Model</a></li>
+            <li class="TOClist"><a href="#lesson3.4">Images</a></li>
+            <li class="TOClist"><a href="#lesson3.5">Code - Test - Define</a></li>
+            <li class="TOClist"><a href="#lesson3.6">Verifying HTML and CSS</a></li>
+          </ul>
+        </li>
+    </ol>
+  </div>
+  
+  <div class="container">
+    <h2 id="lesson1">Lesson 1: The Basics of the Web and HTML</h2>
+	<div class="lesson" id="lesson1.1">
+		<div class="title">World Wide Web</div>
+			<div class="content">
+				<p>The world wide web is a collection of html documents. <em>HTML</em> stands for HyperText Markup Language. It includes <em>hyperlinks</em>
+					which are links between pages. It was invented in the 1990's.<br><br>
+					Files that can exist on the web include:</p>
+					<ul>
+						<li>plain text files</li>
+						<li>html</li>
+						<li>images</li>
+						<li>audio</li>
+						<li>video</li>
+					</ul>
+					Major components of the web include: the person, their computer and browser, the internet, and servers.
+					<ul>
+						<li><b>HTTP</b>: the main protocol of the web</li>
+						<li><b>servers</b>: computers that host the files that make up the web</li>
+						<li><b>internet</b>: the world's largest computer network</li>
+						<li><b>browser</b>: a program that runs on your computer to display files found on the web</li>
+					</ul> 
+			</div>
+	</div>
+    
+	<div class="lesson" id="lesson1.2">
+		<div class="title">HTML</div>
+			<div class="content">
+				<p>A web page is a text document written in a language called HTML. Web browsers read these documents, and then interpret and display 
+				them. HTML is made up of:</p>
+					<ul>
+						<li><b>text content</b>: what you see</li>
+						<li><b>markup</b>: what it looks like</li>
+						<li><b>references to other documents</b>: such as images and videos</li>
+						<li><b>links to other pages</b></li>
+					</ul> 
+				<p>Coding happens when programmers write text in a language that a computer can understand. The computer can then follow the instructions the programmer 
+				wrote.
+				The layout for an html document is:<br><br><br>
+				&lt;!DOCTYPE HTML&gt; - HTML5 doctype <br><br>
+				&lt;html&gt; - surrounds entire html document <br><br>
+				&lt;head&gt; - includes meta data, title, javascript, and css<br><br>
+				&lt;title&gt;Title&lt;/title&gt; - appears at tab of browser window<br><br>
+				&lt;/head&gt;<br><br>
+				&lt;body&gt;<br><br>
+				<b><em>Content</em></b> - what appears in body of document; will mostly be covered by this course<br><br>
+				&lt;/body&gt;<br><br>
+				&lt;/html&gt;<br><br>
+				</p>
+			</div>
+	</div>
+	
+	<div class="lesson" id="lesson1.3">
+		<div class="title">Tags and Elements</div>
+			<div class="content">
+				<p>To make the text look different use tags. <em>Tags</em> allow you to change the look of the plain text such as italicizing, bolding, or underlining
+				text. This is done by enclosing the text that we want to alter with an opening and closing tag such as: &lt;tag name&gt; content &lt;/tag name&gt;. If 
+				the opening or closing tag isn't entered, the text will not be altered. Programmers need to write exactly the way a computer understands 
+				(also known as writing with correct "syntax"). For example, if you forget to close a &lt;b&gt; tag, the computer won't be able to figure out what you had intended 
+				to make bold. This can be very frustrating. An HTML tag is always contained within angled brackets <b>&lt;&gt;</b>. Most tags have an opening tag &lt;p&gt; and a 
+				closing tag, &lt;/p&gt;. Some tags (called "void" tags) do not require a closing tag (like the &lt;br&gt; tag).
+				An HTML <em>element</em> refers to everything within a set of opening and closing tags.
+				</p>
+				<h4>HTML Attributes</h4>
+				<p> An <em>attribute</em> is a property of an HTML element. For example, to set the href attribute of an anchor tag to the Udacity URL, you would write:<br>
+				&lt;a href="www.udacity.com"&gt;. Tags can have attributes that have a certain name and a value that gives additional information to that particular tag. A tag can have multiple
+				attributes. Including an attribute to a tag is shown as: &lt;tagname attr="value"&gt; content &lt;/tagname&gt;
+				</p>
+				<h4>Links</h4>
+				<p>Links are created using attributes. For example, This website is <a href = "https://www.udacity.com">my favorite</a> is written: This website is 
+				&lt;a href = "https://www.udacity.com"&gt; my favorite &lt;/a&gt; The content within the 'a' tags creates a link to the href listed.</p>
+				<h4>Images</h4>
+				<p>Images are created using the &lt;img&gt; tag and including the src and alt attributes. An example of this is &lt;img src="url" alt="text"&gt; where url is 
+				where the source image is located and alt is a text alternative to the image just in case the image doesn't load on the site. The image tag does not 
+				have any content and therefore no closing tag. This is the result of properly inserting an image:
+				<img src="http://www.udacity.com/cs253x/hipmunk.png" alt="hipmunk!">
+				</p>
+			</div>
+	</div>
+        
+	<div class="lesson" id="lesson1.4">
+		<div class="title">Whitespace</div>
+			<div class="content">
+				<p>HTML doesn't recognize whitespace, or empty space. It enters text in a single line, allowing a space between words, unless specified by the break 
+				tag, &lt;br&gt;, at the end of the line we want to break. The break tag is a void tag and doesn't require a closing tag. Another tag we can use to break a 
+				line is using the paragraph tag, &lt;p&gt;content&lt;/p&gt; which requires a closing tag.<br><br>
+				This is the result<br>of using the break tag. It creates separate lines. 
+				</p>
+				<p>And this is the result of using the paragraph tag which creates a line break before the paragraph but doesn't specify when to break the text causing
+				it to continue to the end of the margin or the end of the paragraph.
+				</p>
+    		</div>
+	</div>
+	
+	<div class="lesson" id="lesson1.5">
+		<div class="title">Inline vs. Block Elements</div>
+			<div class="content">
+				<ul>
+					<li>br tag is inline; it ends a line. Inline elements are: b, em, and img tags.</li>
+					<li>p tag creates a block; creates an invisible box</li>
+				</ul>
+				<h4>Span vs. Div</h4>
+				<p><em>Span</em> is inline and <em>div</em> is block. Both contain a class attribute to aid in css.<br></p>
+				<span>This is the result of using span</span> One line.
+				<div>This is the result of using div</div> <p>Similar to using the paragraph tag.</p>
+    		</div>
+	</div>
+
+  </div>
+  
+  <div class="container">
+    <h2 id="lesson2">Lesson 2: Creating a Structured Document with HTML</h2>
+	<div class="lesson" id="lesson2.1">
+		<div class="title">Exploring the Web</div>
+			<div class="content">
+				<p>Some parts that make up the web are:</p>
+				<ul>
+					<li><b><u>HTML</u></b>: Structure</li>
+					<li><b><u>CSS</u></b>: Style</li>
+					<li><b><u>Javascript</u></b>: Interactive Components</li>
+				</ul>
+			</div>
+	</div>
+	
+	<div class="lesson" id="lesson2.2">
+		<div class="title">Browser Development Tools</div>
+			<div class="content">
+				<p>Selecting 'tools' within a browser menu and then selecting 'developer tools' will take you to the development tools for that browser.
+					The development tool shows the structure of a page as the browser interprets it; it is not the actual html code. If you hover over the 
+					lines in the development tool, the corresponding part of the page will be highlighted. Clicking the sideways arrow at the left of the
+					line will cause the line to collapse to expand deepr and deeper in the code crating a tree-like structure. The style format for the page 
+					is in a separate panel to the right of the development tool when selecting the line.</p>
+			</div>
+	</div>
+	
+	<div class="lesson" id="lesson2.3">
+		<div class="title">Tree-Like Structure</div>
+			<div class="content">
+				<p>The tree-like structure shown by clicking the sideways arrow displays a branching structure. Each sideways triangle is an html element; each
+				has an opening and closing tag. HTML elements can have other elements inside them, thus creating the structure. It shows how html classifies page content
+				and is drawn like a family tree.</p>
+			</div>
+	</div>
+	
+	<div class="lesson" id="lesson2.4">
+		<div class="title">How it Works Together</div>
+			<div class="content">
+				<p><b>HTML</b>: Language of the web; syntax and rules of text.<br>
+				<b>CSS</b>: Syntax and rules of how elements are displayed.</p>
+					<ul>
+						<li>Basic word in html language is a tag.</li>
+						<li>Browser turns html tags into elements that form a tree with <em>DOM</em>, Document Object Model.</li>
+						<li>Element is created from opening tag to closing tag; everything in between is content.</li>
+						<li>Each tag has a name or type which dictates which element would be created i.e. paragraph, div, image.</li>
+						<li>Each tag can have attributes with values.</li>
+					</ul>
+			</div>
+	</div>
+	
+	<div class="lesson" id="lesson2.5">
+		<div class="title">Boxes Everywhere</div>
+			<div class="content">
+				<p>1. Every element is within a box or div. <br>
+				2. When creating a circle, the border-radius property is used to determine how to place the circle within the box.<br>
+				3. Webpage layout should be designed in a boxlayout.<br>
+				4. Style can be added to an element by adding an class attribute.</p>
+			</div>
+	</div>
+	
+	<div class="lesson" id="lesson2.6">
+		<div class="title">Text Editors</div>
+			<div class="content">
+				<p>Special text editors, such as Sublime Text, are used by programmers to make coding simpler.</p>
+			</div>
+	</div>
+
+  </div>
+  
+  <div class="container">
+  <h2 id="lesson3">Lesson 3: Adding CSS Style and HTML Structure</h2>
+    
+	<div class="lesson" id="lesson3.1">
+		<div class="title">Avoiding Repetition</div>
+			<div class="content">
+				<p>It is very important to avoid repetition! Avoiding repetition helps to avoid errors, ensure proper html document
+					structure, and allows consistency. </p>
+			</div>
+	</div>
+	
+	<div class="lesson" id="lesson3.2">
+		<div class="title">Understanding CSS</div>
+			<div class="content">
+				<p><em><b>CSS</b></em>, or Cascading Style Sheets, are used to control the style of related HTML elements. A link to a style file
+				is done by inserting the following in the head section of the html document: &lt;link rel="stylesheet" type="text/css" href="style.css"&gt;</p>
+				<ul>
+					<li>A webpage may have several CSS files</li>
+					<li>Most specific rule of elements applies</li>
+					<li><b><u>Selector</u></b>: What elements of the page the style will apply to</li>
+					<li>p{} - will change the style for all content of that tag. This shows a change to all paragraphs</li>
+					<li>.class{} - will change the style of the content within a class</li>
+					<li>#id{} - will change the style of the content within an id</li>
+				</ul>
+			</div>
+	</div>
+	
+	<div class="lesson" id="lesson3.3">
+		<div class="title">The Box Model</div>
+			<div class="content">
+				<p>The box model includes a margin, border, padding, and content.</p>
+					<ul>
+						<li><b><u>Content</u></b>: Image or text appearing on website</li>
+						<li><b><u>Padding</u></b>: Clears area around content</li>
+						<li><b><u>Border</u></b>: Forms around padding</li>
+						<li><b><u>Margin</u></b>: Clears area between border and edges of the screen. Can not change it's color</li>
+					</ul>
+					<p>Box-sizing is done to avoid having to recalculate size of content, padding, and borders for the size of the screen:<br><br>
+					*{<br>
+					&nbsp;box-sizing:border-box;<br>
+					&nbsp;}<br><br>
+					It doesn't include the margins. Box-sizing isn't compatible in older browsers. Must add browser specific prefixes:<br><br>
+					*{<br>
+					&nbsp;-webkit-box-sizing:border-box;<br>
+					&nbsp;-moz-box-sizing:border-box;<br>
+					&nbsp;-ms-box-sizing:border-box;<br>
+					&nbsp;box-sizing:border-box;<br>
+					&nbsp;}
+					</p>
+			</div>
+	</div>
+	
+	<div class="lesson" id="lesson3.4">
+		<div class="title">Images</div>
+			<div class="content">
+				<p>Images are stored in files accessible to the webpage. Make sure to use the 'alt' attribute just in case the page can't load the image.</p>
+			</div>
+	</div>
+	
+	<div class="lesson" id="lesson3.5">
+		<div class="title">Code - Test - Define</div>
+			<div class="content">
+				<p>1. Look for natural boxes<br>
+					2. Look for repeated styles and semantic elements<br>
+					3. Write HTML<br>
+					4. Apply styles (biggest to smallest)<br>
+					5. Fix things<br>
+					<em>**Development tools help to review changes made to a webpage without changing the HTML or CSS</em></p>
+			</div>
+	</div>
+	
+	<div class="lesson" id="lesson3.6">
+		<div class="title">Verifying HTML and CSS</div>
+			<div class="content">
+				<p><b>Validation Service</b> is a website used to check HTML and CSS files to make sure coding is up to standard and correct.
+				<b>ERRORS</b> show what corrections need to be made so that the webpage behaves correctly.<br>
+				The site for HTML markup is <a href = "http://validator.w3.org/">http://validator.w3.org/</a> and the site for CSS is 
+				<a href = "http://jigsaw.w3.org/css-validator/">http://jigsaw.w3.org/css-validator/</a></p>
+			</div>
+	</div>
+
+  </div>
+  
+</body>
+
+</html>
