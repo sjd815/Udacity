@@ -1,13 +1,13 @@
 def generate_html(title, content):
-    html_text_1 = '''
+    html_text1 = '''
 	<div class="lesson">
     <div class="title">
         ''' + title
-    html_text_2 = '''
+    html_text2 = '''
     </div>
     <div class="content">
     <p>''' + content
-    html_text_3 = '''
+    html_text3 = '''
 	</p>
     </div>
 	</div>'''
@@ -73,7 +73,7 @@ def generate_all_html(text):
     all_html = ''
     while lesson != '':
         title = get_title(lesson)
-        content = get_description(lesson)
+        content = get_content(lesson)
         lesson_html = generate_html(title, content)
         all_html = all_html + lesson_html
         current_lesson_number = current_lesson_number + 1
