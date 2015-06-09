@@ -21,9 +21,9 @@ def get_title(lesson):
     title = lesson[start_location+7 : end_location-1]
     return title
 
-def get_description(lesson):
+def get_content(lesson):
     start_location = lesson.find('DESCRIPTION:')
-    description = lesson[start_location+13 :]
+    content = lesson[start_location+13 :]
     return content
 
 def get_lesson_by_number(text, lesson_number):
