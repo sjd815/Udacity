@@ -34,12 +34,18 @@ ol
 color: #CCCCCC;
 }
 
+.TOC
+{
+margin: 0px 100px;
+}
+
 .TOC a
 {
 text-decoration: none;
 color: #CCCCCC;
 font-weight: bold;
 }
+
 .TOC a:hover
 {
 text-decoration:underline;
@@ -82,7 +88,32 @@ border-color: #996699;
 border-width:10px; 
 color: white;
 padding: 20px 40px 0px 40px;
-margin: 50px auto;
+margin: 50px 200px;
+}
+
+.circled 
+{ 
+display: inline-block;
+background-color: #F16274;
+border-radius:50%;
+cursor: pointer;
+position: absolute;
+color: white;
+width: 45px;
+height: 45px;
+border-style: solid;
+border-width: 2px;
+border-color: white;
+}
+
+.tabcode 
+{ 
+padding-left:1.5em;
+}
+
+.twotabs 
+{
+padding-left:2.5em;
 }
 
 .lesson
@@ -106,3 +137,6 @@ margin: 20px;
 color: #000000;
 }
 
+
+
+       
