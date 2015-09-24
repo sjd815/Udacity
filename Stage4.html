@@ -117,6 +117,14 @@
             <li class="TOClist"><a href="#lesson14.2">Object Oriented Prgramming</a></li>
           </ul>
         </li>
+		<li class="TOClessons"><a href="#lesson15">Adding Comments</a>
+          <ul class="TOCul">
+            <li class="TOClist"><a href="#lesson15.1">Servers in More Detail</a></li>
+            <li class="TOClist"><a href="#lesson15.2">Validation of User Input</a></li>
+            <li class="TOClist"><a href="#lesson15.3">HTML Templates and Abstraction</a></li>
+			<li class="TOClist"><a href="#lesson15.4">Submit Comment</a></li>
+          </ul>
+        </li>
     </ol>
   </div>
   
@@ -463,7 +471,7 @@
 					<em>Indexing</em> is used to find certain characters within a string where the first character is 0, the next 1, the next 2 and etc. This is done by:<br>
 					<string>[<expression>]<br>
 					'udacity'[0] => u<br>
-					'udacity'[2] => a
+					'udacity'[2] => a<br>
 				</p>
 			</div>
 		</div>
@@ -1555,6 +1563,118 @@
 		</div>
 	</div>
 	
-  </div>
+	<div class="container">
+  <h2 id="lesson15">Add Comments</h2>
+	<div class="lesson" id="lesson15.1">
+		<div class="title">Servers in More Detail</div>
+			<div class="content">
+				<p>
+					A server is a computer whose primary purpose is to handle and respond to HTTP requests. An example of this is when a <em>client</em> 
+					(web browser) requests data (a website or other file) from a server; the server may then respond by sending a status message 
+					(HTTP response) along with the contents of the requested object to the client. Aside from static websites and files, the 
+					requested <em>data</em> may also represent a web application in which a server dynamically generates content based on HTTP 
+					requests from a web browser or other interface.
+				</p>
+                <p>
+					The most common protocol for communication between clients and servers is called HTTP, for Hyper Text Transfer Protocol. 
+					HTTP provides a language and syntax for requests and responses between computers and servers. GET requests are often 
+					used for for requesting data (like when entering a URL in the address bar of a web browser), and POST requests are 
+					often used when sending data to a server for storage or processing (like when submitting information in an HTML form). 
+					Both types of requests are followed by HTTP responses including a variety of status codes and brief reason phrases, 
+					followed by additional details about the response. As described above, a response message from a server may or may 
+					not be accompanied by some requested data (following a GET request), or the delivery of a response message may coincide 
+					with the server actually storing or doing something with data being sent to it (following a POST request); or the server 
+					may do nothing in the case that it sends an unsuccessful response.
+				</p>
+			</div>
+		</div>
+		
+		<div class="lesson" id="lesson15.2">
+		<div class="title">Validation of User Input</div>
+			<div class="content">
+				<p>
+					There are several reasons that servers should validate data received by clients. One reason is site security: in order 
+					to prevent web applications and databases from being hacked, manipulated, or broken by malicious clients, servers should 
+					be able recognize bad input and deal with it appropriately. Bad data may take the form of any user input, including 
+					HTTP GET parameters in a URL or HTML form data. As a countermeasure to malicious activity, web applications should 
+					verify all data inputs on the server-side to make sure that it is of the correct type and within the constraints 
+					expected by the web application.
+				</p>
+            	<p>
+					An equally important reason to validate user input is to ensure a favorable user experience of web apps. For example, 
+					the payment form of an online store should check the format and length of a credit card number to ensure that it is 
+					a valid card number. Imagine what happens when a user accidentally omits a number from her credit card -- the server 
+					should be able to return the form to the user with a message to re-enter the card number (in many cases the returned 
+					form should also preserve the data previously submitted by the user, although this may not be good practice for credit 
+					card numbers). If a customer is met with a blank form or has to make a phone call to the online store to confirm that 
+					their order was received, chances are they’ll simply take their business elsewhere. The examples shown in the course 
+					involved a web form allowing users to input their birthdays. A web app that does not implement proper verification may 
+					respond with a “thank you” message even for partially invalid inputs like “Flubuary 34, 1947,” whereas a server doing 
+					proper verification should return the form to the user with an error message (or better yet, an error message specifying 
+					the invalid month and date entries).
+				</p>
+			</div>
+		</div>
+		
+		<div class="lesson" id="lesson15.3">
+		<div class="title">HTML Templates and Abstraction</div>
+			<div class="content">
+				<p>
+					Templates are libraries that allow programmers to efficiently build complicated strings, most commonly HTML strings. The 
+					HTML Templating engine that we used in this course was Jinja2, which runs on Python. Jinja2 includes Python’s built in 
+					abstractions like for loops and conditional statements, as well as a simple syntax for string substitutions which we can 
+					insert directly into HTML files for rendering HTML content dynamically. HTML Templates also allow programmers to keep HTML 
+					separate from the files containing their web app code, as this is generally considered a best practice.
+				</p>
+            	<p>
+					For my stage 4 project, I built web app which allows visitors to post comments at the bottom of my notes page. While my page 
+					may potentially display a large number of comments (all of which will appear as separate divs when viewing the page source in 
+					a web browser), all of these entries are rendered on-the-fly with a Jinja2 for loop which is only around 10 lines of code, 
+					involving an easy-to-understand <span class="inline_code">&#123;% for comment in comments %&#125;</span> abstraction, in my 
+					HTML file.
+				</p>
+            	<p>
+					I’ll admit, my course notes HTML file is still lengthy…one can imagine that if I redesigned my page to implement a similar form 
+					for posting new lesson topics &amp; simply pushing my entries to Google’s Datastore, I would likely reduce my HTML file from 
+					800+ lines of code to probably fewer than 100 lines conservatively. I haven’t implemented this yet, mainly because I’m still 
+					very new at App Engine &amp; would like to code this in a proper way -- but I definitely see the potential for eliminating 
+					redundant code and at the same time making my website functional and dynamic.
+				</p>
+			</div>
+			
+			<div class="comments" id="lesson15.4">
+		<a name="comments"></a>
+			<div class="content">
+			 <div class="comments">
+	            <form action="/sign" method="post">
+	            	<div>
+	            		<label for="comment"><b><u>Add a Comment</u></b></label>
+	            		<a class="linktext" href="{{ url|safe }}">{{ url_linktext }}</a>
+	            	</div>
+	            	<div><p style="color: red">{{ blank_comment_error }}</p></div>
+				    <div><textarea name="comment" rows="10" cols="60"></textarea></div>
+				    <div><input type="submit" value="Share Comment"></div>
+				    <br/>
+				</form>
+				<div class="comments">
+				{% for comment in comments %}
+	      			{% if comment.author %}
+	        		 <b>{{ comment.author.email }}
+						{% if user %}
+	            			(You)
+	          			{% endif %}
+	        		 </b> wrote on {{ comment.timestamp.strftime("%m/%d/%Y at %H:%M UTC") }}:
+	      			{% else %}
+	       			 <em>Anonymous</em> wrote on {{ comment.timestamp.strftime("%m/%d/%Y at %H:%M UTC") }}:
+	      			{% endif %}
+	     	 		<div class="comment"><pre><blockquote>{{ comment.content }}</blockquote></pre></div>
+	     	 		<br/>
+	    		{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>	
+	</div>		
+	</div>
 </body>
 </html>
